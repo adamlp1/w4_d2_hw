@@ -1,11 +1,11 @@
 require('sinatra')
 require('sinatra/contrib/all')
 
-require_relative('models/calculator')
+require_relative('models/film.rb')
 also_reload('./models/*')
 
 
-get '/films/:list' do
-  @films = Film.all(params[:list])
+get '/films' do
+  @films = Film.all()
   erb(:index)
 end
